@@ -6,17 +6,17 @@ bibliography: references.bib
 
 An application to visualize the network
 
-# I. Introduction 
+# I. Introduction
 
 Contact tracing is an essential public health tool for controlling infectious disease outbreaks such as those caused by the COVID-19 virus[@1; @2]. Before May 2021, with wildtype and alpha variants of COVID-19[@3], Ho Chi Minh city (HCM)-- the largest city in the south of Vietnam, had a few outbreaks and successfully contained them in a short period. One of the factors contributing to the success in HCM was intensive contact tracing for quarantine and isolation.
 
 Policies for isolation and quarantine rely on accurate knowledge of the duration after infection before the virus can be detected (latency time) and the duration after infection for these symptoms to appear (incubation time). Studies on the variation of these parameters are hampered by incomplete information, often based on data that were not primarily collected for scientific purposes.
 
-In HCM, Public health staff contacted and traced up to the second generation of cases\' contacts. The confirmed case report was recorded in a word file with very simple template and inconsistent contacts history.
+In HCM, Public health staff contacted and traced up to the second generation of cases' contacts. The confirmed case report was recorded in a word file with very simple template and inconsistent contacts history.
 
-With the spread of Delta variant from May, 2021[3], the number of cases increased rapidly within a short period overwhelming the contact tracing work as the work on the word files took time. There were recommendations about digital forms that could improve the contact tracing process[4], and WHO also developed digital tools[5] in 2020 to support public health staff. However, the tools seemed to be complicated and was not used in HCM in 2021. Drawing from our experiences while working on confirmed case reports in HCM from May to July 2021, we have designed and proposed a prototype tool. This tool encompasses a straightforward digital questionnaire form implemented on the KoboToolbox platform[6], aiding in the tracing of contacts and facilitating direct data analysis using the R language with the KoboconnectR package[7]. And, an R Shiny application to visualize the network between case.
+With the spread of Delta variant from May, 2021[@3], the number of cases increased rapidly within a short period overwhelming the contact tracing work as the work on the word files took time. There were recommendations about digital forms that could improve the contact tracing process[@4], and WHO also developed digital tools[@5] in 2020 to support public health staff. However, the tools seemed to be complicated and was not used in HCM in 2021. Drawing from our experiences while working on confirmed case reports in HCM from May to July 2021, we have designed and proposed a prototype tool. This tool encompasses a straightforward digital questionnaire form implemented on the KoboToolbox platform[@6], aiding in the tracing of contacts and facilitating direct data analysis using the R language with the KoboconnectR package[@7]. And, an R Shiny application to visualize the network between case.
 
-# II. Objectives 
+# II. Objectives
 
 In this study, our objectives are to develop a prototype tool that includes:
 
@@ -24,7 +24,7 @@ In this study, our objectives are to develop a prototype tool that includes:
 
 -   An R Shiny application to visualize the network of the cases with the data from the digital form above to support the policy makers have the decisions in time.
 
-# III. Method 
+# III. Method
 
 ## 1. Design the questionnaire form
 
@@ -44,7 +44,7 @@ The questionnaire would be used in the context of interviewing which means there
 
 Step 3: Develop questions and choose question type
 
--   Based on the Guidance for tracing contacts of confirmed cases in the Regulations No. 5053/2020/QĐ-BYT issued by Ministry of Health, Vietnam on 03/12/2020[8].
+-   Based on the Guidance for tracing contacts of confirmed cases in the Regulations No. 5053/2020/QĐ-BYT issued by Ministry of Health, Vietnam on 03/12/2020[@8].
 
 -   Based on the simple template which public health staff in HCM used in the period of May - July 2021
 
@@ -60,7 +60,7 @@ Step 5: Test the questionnaire
 
 **Challenges**: When we have the draft of the form we could not perform a pilot test as the outkreak was over
 
-**Opportunity**: At Oxford University Clinical Research Unit (OUCRU), we have set up a Health Research Advisory Board (HRAB)[9]. It is a group of interested individuals from the community, who are invited to meet with health professionals and researchers to contribute opinions, feedback and suggestions for public health research conducted by OUCRU. Representation on the HRAB is 10-15 public people. The purposes of the board are: 1) To provide a platform linking researchers, health care workers and the wider community that enable effective and impactful health research; 2) Explore current perceptions and opinions of the community towards health research;
+**Opportunity**: At Oxford University Clinical Research Unit (OUCRU), we have set up a Health Research Advisory Board (HRAB)[@9]. It is a group of interested individuals from the community, who are invited to meet with health professionals and researchers to contribute opinions, feedback and suggestions for public health research conducted by OUCRU. Representation on the HRAB is 10-15 public people. The purposes of the board are: 1) To provide a platform linking researchers, health care workers and the wider community that enable effective and impactful health research; 2) Explore current perceptions and opinions of the community towards health research;
 
 We met with 8 members of HARB and 1 public health staff from HCM Center for Disease Control (HCDC) for two and half hours. After gave the board an overview about the project include: objectives, context, challenges, we went through the questionnaire one by one to modify questions which are unclear. In the end of the meeting, we looked over the sequence and layout to make sure the flow of the questionnaire meets the understanding of both community and public health staff.
 
@@ -70,7 +70,7 @@ Most of statistical analysis are performed in R. KoboconnectR facilitates data e
 
 Shiny app
 
-# IV. Tools 
+# IV. Tools
 
 KoboToolbox
 
