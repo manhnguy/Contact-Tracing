@@ -1,10 +1,14 @@
+---
+bibliography: references.bib
+---
+
 # Contact-Tracing
 
 An application to visualize the network
 
 # I. Introduction 
 
-Contact tracing is an essential public health tool for controlling infectious disease outbreaks such as those caused by the COVID-19 virus[1], [2]. Before May 2021, with wildtype and alpha variants of COVID-19[3], Ho Chi Minh city (HCM)-- the largest city in the south of Vietnam, had a few outbreaks and successfully contained them in a short period. One of the factors contributing to the success in HCM was intensive contact tracing for quarantine and isolation.
+Contact tracing is an essential public health tool for controlling infectious disease outbreaks such as those caused by the COVID-19 virus[@1; @2]. Before May 2021, with wildtype and alpha variants of COVID-19[@3], Ho Chi Minh city (HCM)-- the largest city in the south of Vietnam, had a few outbreaks and successfully contained them in a short period. One of the factors contributing to the success in HCM was intensive contact tracing for quarantine and isolation.
 
 Policies for isolation and quarantine rely on accurate knowledge of the duration after infection before the virus can be detected (latency time) and the duration after infection for these symptoms to appear (incubation time). Studies on the variation of these parameters are hampered by incomplete information, often based on data that were not primarily collected for scientific purposes.
 
