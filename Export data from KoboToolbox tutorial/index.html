@@ -591,7 +591,7 @@ extract_lastneg &lt;- function(data,id=&quot;parent_index&quot;,result.name=&quo
 
 last_negative &lt;- (extract_lastneg(testing,&quot;id&quot;,&quot;Test_result&quot;,&quot;Test_date&quot;))
 testing &lt;- left_join(testing, last_negative)</code></pre>
-<pre><code>## Joining, by = &quot;id&quot;</code></pre>
+<pre><code>## Joining with `by = join_by(id)`</code></pre>
 <pre class="r"><code>## Get first positive test
 first_positive &lt;- function(x) {
   first(which(x == &quot;positive&quot;))
@@ -626,7 +626,7 @@ contact$last_exposure &lt;- as.Date(apply(contact%&gt;%select(starts_with(&quot;
   rename(Case_ID = Patient_code,
          ID_of_the_source_1 = Name_ID_source_1,
          ID_of_the_source_2 = Name_ID_source_2)%&gt;%
-  unite(&quot;infector&quot;, starts_with(&quot;ID_of_the_source&quot;), sep = &quot;,&quot;,remove= F, na.rm = T)%&gt;% #make a column include all posible infectors
+  unite(&quot;infector&quot;, starts_with(&quot;ID_of_the_source&quot;), sep = &quot;,&quot;,remove= F, na.rm = T)%&gt;% #make a column include all possible infectors
   mutate(infector = na_if(infector, &quot;&quot;))
 
 df1$infector &lt;- lapply(df1$infector, function(x) strsplit(x, &quot;,&quot;)[[1]]) #change the format of infector column for the network</code></pre>
