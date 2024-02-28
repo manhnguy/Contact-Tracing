@@ -1,4 +1,5 @@
 ---
+title: "Contact Tracing"
 bibliography: references.bib
 csl: ieee.csl
 knit: |
@@ -10,8 +11,6 @@ knit: |
     )
   })  
 ---
-
-# Contact-Tracing
 
 # I. Introduction
 
@@ -77,7 +76,7 @@ Most of statistical analysis are performed in R. KoboconnectR facilitates data e
 
 Shiny app
 
-# IV. Tools
+# IV. Result - Tools
 
 KoboToolbox
 
