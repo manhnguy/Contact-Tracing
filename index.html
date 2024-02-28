@@ -381,13 +381,11 @@ display: none;
 <h1>I. Introduction</h1>
 <p>Contact tracing is an essential public health tool for controlling
 infectious disease outbreaks such as those caused by the COVID-19
-virus<span class="citation">(Hossain et al. 2022; <span>“Coronavirus
-Disease (COVID-19): Contact Tracing,”</span> n.d.)</span>. Before May
-2021, with wildtype and alpha variants of COVID-19<span class="citation">(Tam et al. 2023)</span>, Ho Chi Minh city (HCM)– the
-largest city in the south of Vietnam, had a few outbreaks and
-successfully contained them in a short period. One of the factors
-contributing to the success in HCM was intensive contact tracing for
-quarantine and isolation.</p>
+virus<span class="citation">[1], [2]</span>. Before May 2021, with
+wildtype and alpha variants of COVID-19<span class="citation">[3]</span>, Ho Chi Minh city (HCM)– the largest city in
+the south of Vietnam, had a few outbreaks and successfully contained
+them in a short period. One of the factors contributing to the success
+in HCM was intensive contact tracing for quarantine and isolation.</p>
 <p>Policies for isolation and quarantine rely on accurate knowledge of
 the duration after infection before the virus can be detected (latency
 time) and the duration after infection for these symptoms to appear
@@ -398,21 +396,18 @@ primarily collected for scientific purposes.</p>
 generation of cases’ contacts. The confirmed case report was recorded in
 a word file with very simple template and inconsistent contacts
 history.</p>
-<p>With the spread of Delta variant from May, 2021<span class="citation">(Tam et al. 2023)</span>, the number of cases increased
-rapidly within a short period overwhelming the contact tracing work as
-the work on the word files took time. There were recommendations about
-digital forms that could improve the contact tracing process<span class="citation">(Ivers and Weitzner 2020)</span>, and WHO also
-developed digital tools<span class="citation">(<span>“Digital Tools for
-COVID-19 Contact Tracing,”</span> n.d.)</span> in 2020 to support public
-health staff. However, the tools seemed to be complicated and was not
-used in HCM in 2021. Drawing from our experiences while working on
-confirmed case reports in HCM from May to July 2021, we have designed
-and proposed a prototype tool. This tool encompasses a straightforward
-digital questionnaire form implemented on the KoboToolbox platform<span class="citation">(<span>“KoboToolbox,”</span> n.d.)</span>, aiding in
-the tracing of contacts and facilitating direct data analysis using the
-R language with the KoboconnectR package<span class="citation">(Sen
-2022)</span>. And, an R Shiny application to visualize the network
-between case.</p>
+<p>With the spread of Delta variant from May, 2021<span class="citation">[3]</span>, the number of cases increased rapidly
+within a short period overwhelming the contact tracing work as the work
+on the word files took time. There were recommendations about digital
+forms that could improve the contact tracing process<span class="citation">[4]</span>, and WHO also developed digital tools<span class="citation">[5]</span> in 2020 to support public health staff.
+However, the tools seemed to be complicated and was not used in HCM in
+2021. Drawing from our experiences while working on confirmed case
+reports in HCM from May to July 2021, we have designed and proposed a
+prototype tool. This tool encompasses a straightforward digital
+questionnaire form implemented on the KoboToolbox platform<span class="citation">[6]</span>, aiding in the tracing of contacts and
+facilitating direct data analysis using the R language with the
+KoboconnectR package<span class="citation">[7]</span>. And, an R Shiny
+application to visualize the network between case.</p>
 </div>
 <div id="ii.-objectives" class="section level1">
 <h1>II. Objectives</h1>
@@ -477,8 +472,7 @@ with different background, age, gender….</p>
 <ul>
 <li><p>Based on the Guidance for tracing contacts of confirmed cases in
 the Regulations No. 5053/2020/QĐ-BYT issued by Ministry of Health,
-Vietnam on 03/12/2020<span class="citation">(<span>“Quyết định số
-5053/2020/Q<span></span>-BYT,”</span> n.d.)</span>.</p></li>
+Vietnam on 03/12/2020<span class="citation">[8]</span>.</p></li>
 <li><p>Based on the simple template which public health staff in HCM
 used in the period of May - July 2021</p></li>
 <li><p>Add questions to get more information for estimating latency
@@ -493,16 +487,15 @@ tracing during outbreak period to get feedback.</p>
 could not perform a pilot test as the outkreak was over</p>
 <p><strong>Opportunity</strong>: At Oxford University Clinical Research
 Unit (OUCRU), we have set up a Health Research Advisory Board
-(HRAB)<span class="citation">(<span>“Community Advisory Boards at
-OUCRU,”</span> n.d.)</span>. It is a group of interested individuals
-from the community, who are invited to meet with health professionals
-and researchers to contribute opinions, feedback and suggestions for
-public health research conducted by OUCRU. Representation on the HRAB is
-10-15 public people. The purposes of the board are: 1) To provide a
-platform linking researchers, health care workers and the wider
-community that enable effective and impactful health research; 2)
-Explore current perceptions and opinions of the community towards health
-research;</p>
+(HRAB)<span class="citation">[9]</span>. It is a group of interested
+individuals from the community, who are invited to meet with health
+professionals and researchers to contribute opinions, feedback and
+suggestions for public health research conducted by OUCRU.
+Representation on the HRAB is 10-15 public people. The purposes of the
+board are: 1) To provide a platform linking researchers, health care
+workers and the wider community that enable effective and impactful
+health research; 2) Explore current perceptions and opinions of the
+community towards health research;</p>
 <p>We met with 8 members of HARB and 1 public health staff from HCM
 Center for Disease Control (HCDC) for two and half hours. After gave the
 board an overview about the project include: objectives, context,
@@ -523,43 +516,51 @@ instead of downloading the individual spreadsheet files.</p>
 <h1>IV. Tools</h1>
 <p>KoboToolbox</p>
 <p>Link to the form: <a href="https://ee.kobotoolbox.org/x/BfIvw6ed" class="uri">https://ee.kobotoolbox.org/x/BfIvw6ed</a></p>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-9" class="csl-entry">
-<span>“Community Advisory Boards at OUCRU.”</span> n.d. <a href="https://www.oucru.org/project/community-advisory-boards/">https://www.oucru.org/project/community-advisory-boards/</a>.
+<p><strong>Reference:</strong></p>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-1" class="csl-entry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A.
+D. Hossain, J. Jarolimova, A. Elnaiem, C. X. Huang, A. Richterman, and
+L. C. Ivers, <span>“Effectiveness of contact tracing in the control of
+infectious diseases: A systematic review,”</span> <em>The Lancet Public
+Health</em>, vol. 7, no. 3, pp. e259–e273, Mar. 2022, doi: <a href="https://doi.org/10.1016/S2468-2667(22)00001-9">10.1016/S2468-2667(22)00001-9</a>.</div>
 </div>
 <div id="ref-2" class="csl-entry">
-<span>“Coronavirus Disease (COVID-19): Contact Tracing.”</span> n.d. <a href="https://www.who.int/news-room/questions-and-answers/item/coronavirus-disease-covid-19-contact-tracing">https://www.who.int/news-room/questions-and-answers/item/coronavirus-disease-covid-19-contact-tracing</a>.
-</div>
-<div id="ref-5" class="csl-entry">
-<span>“Digital Tools for COVID-19 Contact Tracing.”</span> n.d. <a href="https://www.who.int/publications-detail-redirect/WHO-2019-nCoV-Contact_Tracing-Tools_Annex-2020.1">https://www.who.int/publications-detail-redirect/WHO-2019-nCoV-Contact_Tracing-Tools_Annex-2020.1</a>.
-</div>
-<div id="ref-1" class="csl-entry">
-Hossain, Azfar D., Jana Jarolimova, Ahmed Elnaiem, Cher X. Huang, Aaron
-Richterman, and Louise C. Ivers. 2022. <span>“Effectiveness of Contact
-Tracing in the Control of Infectious Diseases: A Systematic
-Review.”</span> <em>The Lancet Public Health</em> 7 (3): e259–73. <a href="https://doi.org/10.1016/S2468-2667(22)00001-9">https://doi.org/10.1016/S2468-2667(22)00001-9</a>.
-</div>
-<div id="ref-4" class="csl-entry">
-Ivers, Louise C., and Daniel J. Weitzner. 2020. <span>“Can Digital
-Contact Tracing Make up for Lost Time?”</span> <em>The Lancet Public
-Health</em> 5 (8): e417–18. <a href="https://doi.org/10.1016/S2468-2667(20)30160-2">https://doi.org/10.1016/S2468-2667(20)30160-2</a>.
-</div>
-<div id="ref-6" class="csl-entry">
-<span>“KoboToolbox.”</span> n.d. <a href="https://www.kobotoolbox.org/">https://www.kobotoolbox.org/</a>.
-</div>
-<div id="ref-8" class="csl-entry">
-<span>“Quyết định số 5053/2020/Q<span></span>-BYT.”</span> n.d. <a href="https://moh.gov.vn/documents/174521/1230201/QD+Huong+dan+ATVSLD+cho+NVYT+trong+PCD+COVID-19.signed.pdf/812a2564-020a-46e7-8df2-6ee4ebafe900">https://moh.gov.vn/documents/174521/1230201/QD+Huong+dan+ATVSLD+cho+NVYT+trong+PCD+COVID-19.signed.pdf/812a2564-020a-46e7-8df2-6ee4ebafe900</a>.
-</div>
-<div id="ref-7" class="csl-entry">
-Sen, Asitav. 2022. <em>KoboconnectR: Download Data from Kobotoolbox to
-r</em>. <a href="https://cran.r-project.org/web/packages/KoboconnectR/index.html">https://cran.r-project.org/web/packages/KoboconnectR/index.html</a>.
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline"><span>“Coronavirus disease (COVID-19): Contact
+tracing.”</span> Available: <a href="https://www.who.int/news-room/questions-and-answers/item/coronavirus-disease-covid-19-contact-tracing">https://www.who.int/news-room/questions-and-answers/item/coronavirus-disease-covid-19-contact-tracing</a></div>
 </div>
 <div id="ref-3" class="csl-entry">
-Tam, Nguyen Thi, Nguyen To Anh, Trinh Son Tung, Pham Ngoc Thach, Nguyen
-Thanh Dung, Van Dinh Trang, Le Manh Hung, et al. 2023.
-<span>“Spatiotemporal Evolution of SARS-CoV-2 Alpha and Delta Variants
-During Large Nationwide Outbreak of COVID-19, Vietnam, 2021.”</span>
-<em>Emerging Infectious Diseases</em> 29 (5): 1002–6. <a href="https://doi.org/10.3201/eid2905.221787">https://doi.org/10.3201/eid2905.221787</a>.
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">N.
+T. Tam <em>et al.</em>, <span>“Spatiotemporal evolution of SARS-CoV-2
+alpha and delta variants during large nationwide outbreak of COVID-19,
+vietnam, 2021,”</span> <em>Emerging Infectious Diseases</em>, vol. 29,
+no. 5, pp. 1002–1006, May 2023, doi: <a href="https://doi.org/10.3201/eid2905.221787">10.3201/eid2905.221787</a>.</div>
+</div>
+<div id="ref-4" class="csl-entry">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">L.
+C. Ivers and D. J. Weitzner, <span>“Can digital contact tracing make up
+for lost time?”</span> <em>The Lancet Public Health</em>, vol. 5, no. 8,
+pp. e417–e418, Aug. 2020, doi: <a href="https://doi.org/10.1016/S2468-2667(20)30160-2">10.1016/S2468-2667(20)30160-2</a>.</div>
+</div>
+<div id="ref-5" class="csl-entry">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline"><span>“Digital tools for COVID-19 contact
+tracing.”</span> Available: <a href="https://www.who.int/publications-detail-redirect/WHO-2019-nCoV-Contact_Tracing-Tools_Annex-2020.1">https://www.who.int/publications-detail-redirect/WHO-2019-nCoV-Contact_Tracing-Tools_Annex-2020.1</a></div>
+</div>
+<div id="ref-6" class="csl-entry">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline"><span>“KoboToolbox.”</span> Available: <a href="https://www.kobotoolbox.org/">https://www.kobotoolbox.org/</a></div>
+</div>
+<div id="ref-7" class="csl-entry">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">A.
+Sen, <em>KoboconnectR: Download data from kobotoolbox to r</em>. 2022.
+Available: <a href="https://cran.r-project.org/web/packages/KoboconnectR/index.html">https://cran.r-project.org/web/packages/KoboconnectR/index.html</a></div>
+</div>
+<div id="ref-8" class="csl-entry">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline"><span>“Quyết định số
+5053/2020/Q<span></span>-BYT,”</span> Available: <a href="https://moh.gov.vn/documents/174521/1230201/QD+Huong+dan+ATVSLD+cho+NVYT+trong+PCD+COVID-19.signed.pdf/812a2564-020a-46e7-8df2-6ee4ebafe900">https://moh.gov.vn/documents/174521/1230201/QD+Huong+dan+ATVSLD+cho+NVYT+trong+PCD+COVID-19.signed.pdf/812a2564-020a-46e7-8df2-6ee4ebafe900</a></div>
+</div>
+<div id="ref-9" class="csl-entry">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline"><span>“Community advisory boards at
+OUCRU.”</span> Available: <a href="https://www.oucru.org/project/community-advisory-boards/">https://www.oucru.org/project/community-advisory-boards/</a></div>
 </div>
 </div>
 </div>
