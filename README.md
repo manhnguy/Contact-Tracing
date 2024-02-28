@@ -1,10 +1,16 @@
 ---
 bibliography: references.bib
+knit: |
+  (function(input, ...) {
+    rmarkdown::render(
+      input,
+      output_file =  'index.html',
+      envir = globalenv()
+    )
+  })  
 ---
 
 # Contact-Tracing
-
-An application to visualize the network
 
 # I. Introduction
 
