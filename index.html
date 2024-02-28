@@ -380,7 +380,7 @@ display: none;
 <p>Contact tracing is an essential public health tool for controlling
 infectious disease outbreaks such as those caused by the COVID-19
 virus<span class="citation">[1], [2]</span>. Before May 2021, with
-wildtype and alpha variants of COVID-19<span class="citation">[3]</span>, Ho Chi Minh city (HCM)– the largest city in
+wild-type and alpha variants of COVID-19<span class="citation">[3]</span>, Ho Chi Minh city (HCM)– the largest city in
 the south of Vietnam, had a few outbreaks and successfully contained
 them in a short period. One of the factors contributing to the success
 in HCM was intensive contact tracing for quarantine and isolation.</p>
@@ -405,7 +405,7 @@ prototype tool. This tool encompasses a straightforward digital
 questionnaire form implemented on the KoboToolbox platform<span class="citation">[6]</span>, aiding in the tracing of contacts and
 facilitating direct data analysis using the R language with the
 KoboconnectR package<span class="citation">[7]</span>. And, an R Shiny
-application to visualize the network between case.</p>
+application to visualize the network between cases.</p>
 </div>
 <div id="ii.-objectives" class="section level1">
 <h1>II. Objectives</h1>
@@ -423,8 +423,8 @@ the decisions in time.</p></li>
 </div>
 <div id="iii.-method" class="section level1">
 <h1>III. Method</h1>
-<div id="design-the-questionnaire-form" class="section level2">
-<h2>1. Design the questionnaire form</h2>
+<div id="design-the-questionnaire" class="section level2">
+<h2>1. Design the questionnaire</h2>
 <p>In this propose, we will use KoboToolbox platform for developing the
 questionnaire. KoboToolbox is an open source platform for the
 collection, management, and visualization of data. It is designed for
@@ -469,20 +469,23 @@ with different background, age, gender….</p>
 <p>Step 3: Develop questions and choose question type</p>
 <ul>
 <li><p>Based on the Guidance for tracing contacts of confirmed cases in
-the Regulations No. 5053/2020/QĐ-BYT issued by Ministry of Health,
+the Regulations No. 5053/2020/QĐ-BYT issued by Ministry of Health (MoH),
 Vietnam on 03/12/2020<span class="citation">[8]</span>.</p></li>
 <li><p>Based on the simple template which public health staff in HCM
 used in the period of May - July 2021</p></li>
 <li><p>Add questions to get more information for estimating latency
-time, incubation time.</p>
-<p>about exposure window</p></li>
+time, incubation time.</p></li>
 </ul>
 <p>Step 4: Design question sequence and overall layout</p>
-<p>Work closely with public health staff who performed the contact
-tracing during outbreak period to get feedback.</p>
+<p>As we created this questionnaire, keep in mind that COVID-19 has been
+spreading in Vietnam for over two years. Following the MoH’s guidelines,
+public health staff in HCM have been working hard to trace contacts of
+confirmed cases and their contacts. We closely collaborated with those
+who performed contact tracing during outbreaks to gather feedback and
+improve our approach.</p>
 <p>Step 5: Test the questionnaire</p>
 <p><strong>Challenges</strong>: When we have the draft of the form we
-could not perform a pilot test as the outkreak was over</p>
+could not perform a pilot test as the outbreak was over.</p>
 <p><strong>Opportunity</strong>: At Oxford University Clinical Research
 Unit (OUCRU), we have set up a Community Advisory Board (CAB)<span class="citation">[9]</span>. It is a group of interested individuals
 from the community, who are invited to meet with health professionals
@@ -503,16 +506,33 @@ the understanding of both community and public health staff.</p>
 </div>
 <div id="utilize-koboconnectr-package-and-develop-r-shiny-application" class="section level2">
 <h2>2. Utilize KoboconnectR package and develop R Shiny application</h2>
-<p>Most of statistical analysis are performed in R. KoboconnectR
-facilitates data extraction from Kobotoolbox projects/assets into R,
-instead of downloading the individual spreadsheet files.</p>
-<p>Shiny app</p>
+<p>Most of statistical analysis are performed in R. To streamline the
+process of transferring data from KoboToolbox to R, several packages
+have been created. We opted for KoboconnectR as our tool of choice for
+extracting data from KoboToolbox projects/assets into R. This choice was
+made because, at the time, KoboconnectR stood out as the most
+comprehensive and well-developed package, eliminating the need to
+download individual spreadsheet files.</p>
+<p>After we have the method to extract and import data from KoboToolbox
+into R directly, We developed a Shiny application to visualize the
+networks of the confirmed cases. This app helps Policy Makers see when
+and where outbreaks are happening and how big they are, supporting them
+in making decisions to contain the outbreak.</p>
 </div>
 </div>
 <div id="iv.-result---tools" class="section level1">
 <h1>IV. Result - Tools</h1>
-<p>KoboToolbox</p>
-<p>Link to the form: <a href="https://ee.kobotoolbox.org/x/BfIvw6ed" class="uri">https://ee.kobotoolbox.org/x/BfIvw6ed</a></p>
+<ul>
+<li><p>Questionnaire: Please find the questionnaire form via the link
+here: <a href="https://ee.kobotoolbox.org/x/BfIvw6ed" class="uri">https://ee.kobotoolbox.org/x/BfIvw6ed</a>. For more
+information on data dictionary and manual to use the questionnaire
+please visit the wiki page.</p></li>
+<li><p>R Shiny application: The app is stored in Contact Network
+Visualization folder. To run the app, first run the prep.R then ui.R and
+last server.R. To see the network on the map, please open the app in
+browser. Follow the steps in the app and using the example data
+provided.</p></li>
+</ul>
 <p><strong>Reference:</strong></p>
 <div id="refs" class="references csl-bib-body">
 <div id="ref-1" class="csl-entry">

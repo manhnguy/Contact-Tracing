@@ -14,13 +14,13 @@ knit: |
 
 # I. Introduction
 
-Contact tracing is an essential public health tool for controlling infectious disease outbreaks such as those caused by the COVID-19 virus[@1; @2]. Before May 2021, with wildtype and alpha variants of COVID-19[@3], Ho Chi Minh city (HCM)-- the largest city in the south of Vietnam, had a few outbreaks and successfully contained them in a short period. One of the factors contributing to the success in HCM was intensive contact tracing for quarantine and isolation.
+Contact tracing is an essential public health tool for controlling infectious disease outbreaks such as those caused by the COVID-19 virus[@1; @2]. Before May 2021, with wild-type and alpha variants of COVID-19[@3], Ho Chi Minh city (HCM)-- the largest city in the south of Vietnam, had a few outbreaks and successfully contained them in a short period. One of the factors contributing to the success in HCM was intensive contact tracing for quarantine and isolation.
 
 Policies for isolation and quarantine rely on accurate knowledge of the duration after infection before the virus can be detected (latency time) and the duration after infection for these symptoms to appear (incubation time). Studies on the variation of these parameters are hampered by incomplete information, often based on data that were not primarily collected for scientific purposes.
 
 In HCM, Public health staff contacted and traced up to the second generation of cases' contacts. The confirmed case report was recorded in a word file with very simple template and inconsistent contacts history.
 
-With the spread of Delta variant from May, 2021[@3], the number of cases increased rapidly within a short period overwhelming the contact tracing work as the work on the word files took time. There were recommendations about digital forms that could improve the contact tracing process[@4], and WHO also developed digital tools[@5] in 2020 to support public health staff. However, the tools seemed to be complicated and was not used in HCM in 2021. Drawing from our experiences while working on confirmed case reports in HCM from May to July 2021, we have designed and proposed a prototype tool. This tool encompasses a straightforward digital questionnaire form implemented on the KoboToolbox platform[@6], aiding in the tracing of contacts and facilitating direct data analysis using the R language with the KoboconnectR package[@7]. And, an R Shiny application to visualize the network between case.
+With the spread of Delta variant from May, 2021[@3], the number of cases increased rapidly within a short period overwhelming the contact tracing work as the work on the word files took time. There were recommendations about digital forms that could improve the contact tracing process[@4], and WHO also developed digital tools[@5] in 2020 to support public health staff. However, the tools seemed to be complicated and was not used in HCM in 2021. Drawing from our experiences while working on confirmed case reports in HCM from May to July 2021, we have designed and proposed a prototype tool. This tool encompasses a straightforward digital questionnaire form implemented on the KoboToolbox platform[@6], aiding in the tracing of contacts and facilitating direct data analysis using the R language with the KoboconnectR package[@7]. And, an R Shiny application to visualize the network between cases.
 
 # II. Objectives
 
@@ -32,7 +32,7 @@ In this study, our objectives are to develop a prototype tool that includes:
 
 # III. Method
 
-## 1. Design the questionnaire form
+## 1. Design the questionnaire
 
 In this propose, we will use KoboToolbox platform for developing the questionnaire. KoboToolbox is an open source platform for the collection, management, and visualization of data. It is designed for practitioners, offering an intuitive and accessible interface, making it easy to swiftly develop questionnaires. It can operate offline on any device, and notably, all its core functionalities are freely accessible for nonprofit organizations. As the foremost data collection tool in the nonprofit sector, it is the preferred choice for over 14,000 social impact organizations globally.
 
@@ -50,21 +50,19 @@ The questionnaire would be used in the context of interviewing which means there
 
 Step 3: Develop questions and choose question type
 
--   Based on the Guidance for tracing contacts of confirmed cases in the Regulations No. 5053/2020/QĐ-BYT issued by Ministry of Health, Vietnam on 03/12/2020[@8].
+-   Based on the Guidance for tracing contacts of confirmed cases in the Regulations No. 5053/2020/QĐ-BYT issued by Ministry of Health (MoH), Vietnam on 03/12/2020[@8].
 
 -   Based on the simple template which public health staff in HCM used in the period of May - July 2021
 
 -   Add questions to get more information for estimating latency time, incubation time.
 
-    about exposure window
-
 Step 4: Design question sequence and overall layout
 
-Work closely with public health staff who performed the contact tracing during outbreak period to get feedback.
+As we created this questionnaire, keep in mind that COVID-19 has been spreading in Vietnam for over two years. Following the MoH's guidelines, public health staff in HCM have been working hard to trace contacts of confirmed cases and their contacts. We closely collaborated with those who performed contact tracing during outbreaks to gather feedback and improve our approach.
 
 Step 5: Test the questionnaire
 
-**Challenges**: When we have the draft of the form we could not perform a pilot test as the outkreak was over
+**Challenges**: When we have the draft of the form we could not perform a pilot test as the outbreak was over.
 
 **Opportunity**: At Oxford University Clinical Research Unit (OUCRU), we have set up a Community Advisory Board (CAB)[@9]. It is a group of interested individuals from the community, who are invited to meet with health professionals and researchers to contribute opinions, feedback and suggestions for public health research conducted by OUCRU. Representation on the CAB is 10-15 public people. The purposes of the board are: 1) To provide a platform linking researchers, health care workers and the wider community that enable effective and impactful health research; 2) Explore current perceptions and opinions of the community towards health research;
 
@@ -72,14 +70,14 @@ We met with 8 members of CAB and 1 public health staff from HCM Center for Disea
 
 ## 2. Utilize KoboconnectR package and develop R Shiny application
 
-Most of statistical analysis are performed in R. KoboconnectR facilitates data extraction from Kobotoolbox projects/assets into R, instead of downloading the individual spreadsheet files.
+Most of statistical analysis are performed in R. To streamline the process of transferring data from KoboToolbox to R, several packages have been created. We opted for KoboconnectR as our tool of choice for extracting data from KoboToolbox projects/assets into R. This choice was made because, at the time, KoboconnectR stood out as the most comprehensive and well-developed package, eliminating the need to download individual spreadsheet files.
 
-Shiny app
+After we have the method to extract and import data from KoboToolbox into R directly, We developed a Shiny application to visualize the networks of the confirmed cases. This app helps Policy Makers see when and where outbreaks are happening and how big they are, supporting them in making decisions to contain the outbreak.
 
 # IV. Result - Tools
 
-KoboToolbox
+-   Questionnaire: Please find the questionnaire form via the link here: <https://ee.kobotoolbox.org/x/BfIvw6ed>. For more information on data dictionary and manual to use the questionnaire please visit the wiki page.
 
-Link to the form: <https://ee.kobotoolbox.org/x/BfIvw6ed>
+-   R Shiny application: The app is stored in Contact Network Visualization folder. To run the app, first run the prep.R then ui.R and last server.R. To see the network on the map, please open the app in browser. Follow the steps in the app and using the example data provided.
 
 **Reference:**
