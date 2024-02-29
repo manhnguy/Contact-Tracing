@@ -58,7 +58,7 @@ Step 3: Develop questions and choose question type
 
 Step 4: Design question sequence and overall layout
 
-As we created this questionnaire, keep in mind that COVID-19 has been spreading in Vietnam for over two years. Following the MoH's guidelines, public health staff in HCM have been working hard to trace contacts of confirmed cases and their contacts. We closely collaborated with those who performed contact tracing during outbreaks to gather feedback and improve our approach.
+At the time we developed this questionnaire, COVID-19 has been spreading in Vietnam for over two years. Following the MoH's guidelines, public health staff in HCM have a lot of experience tracing contacts of confirmed cases and their contacts. We closely collaborated with those who performed contact tracing during outbreaks to gather feedback and improve our approach.
 
 Step 5: Test the questionnaire
 
@@ -72,12 +72,12 @@ We met with 8 members of CAB and 1 public health staff from HCM Center for Disea
 
 Most of statistical analysis are performed in R. To streamline the process of transferring data from KoboToolbox to R, several packages have been created. We opted for KoboconnectR as our tool of choice for extracting data from KoboToolbox projects/assets into R. This choice was made because, at the time, KoboconnectR stood out as the most comprehensive and well-developed package, eliminating the need to download individual spreadsheet files.
 
-After we have the method to extract and import data from KoboToolbox into R directly, We developed a Shiny application to visualize the networks of the confirmed cases. This app helps Policy Makers see when and where outbreaks are happening and how big they are, supporting them in making decisions to contain the outbreak.
+In another study, we were working on individual COVID-19 confirmed case report from HCM between May and July 2021. The main objective was to estimate the incubation time and latency time of Delta variant. One of crucial information for determining these times is the exposure window. To assist in choosing the exposure window, we made a simple R Shiny application that visualizes the contact network based on entered data and the individual exposure information. After building the questionnaire, we enhanced the app to make it more user-friendly. This app will help Policy Makers see when and where outbreaks are happening and how big they are, supporting them in making decisions to contain the outbreak.
 
 # IV. Result - Tools
 
--   Questionnaire: Please find the questionnaire form via the link here: <https://ee.kobotoolbox.org/x/BfIvw6ed>. For more information on data dictionary and manual to use the questionnaire please visit the wiki page.
+-   Questionnaire: The questionnaire form can be accessed via the [KoboToolbox](https://ee.kobotoolbox.org/x/BfIvw6ed) link. For additional information about the data dictionary and how to use the questionnaire, please refer to the wiki page. The tutorial for extracting and loading data from KoboToolbox into R is available in the "Export data from KoboToolbox tutorial" folder.
 
--   R Shiny application: The app is stored in Contact Network Visualization folder. To run the app, first run the prep.R then ui.R and last server.R. To see the network on the map, please open the app in browser. Follow the steps in the app and using the example data provided.
+-   R Shiny application: The app is stored in the "Contact Network Visualization" folder. To run the app, start with prep.R, followed by ui.R, and finally run server.R. Open the app in a browser to observe the network on OpenStreetMap. The steps outlined in the app can be followed using the provided example data.
 
 **Reference:**
