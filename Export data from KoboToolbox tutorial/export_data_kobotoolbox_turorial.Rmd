@@ -16,12 +16,8 @@ knit: |
 
 ```{r setup, include=FALSE, message= F}
 knitr::opts_chunk$set(echo = TRUE)
-library(KoboconnectR) #download the data from kobotool box
-library(magrittr) #use the pipe %<>%
-library(tidygeocoder) #get longitude and latitude from the address
+library(KoboconnectR) 
 library(tidyverse)
-library(shiny)
-library(leaflet.extras2) #to make the arrows on the map, the arrows show on html only. function addArrowhead() it will show on html only
 ```
 ## Introduction to the questionnaire form
 The questionnaire form for contact tracing includes 11 rosters (repeating groups of questions). For example, there are two questions for symptoms: type of symptoms and symptom onset date. These two questions are within a roster and can be added(repeat) by clicking to “+” button.
