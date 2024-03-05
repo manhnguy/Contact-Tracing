@@ -10,10 +10,10 @@ require(xtable)
 require(epicontacts)
 require(visNetwork)
 require(lubridate)  # for is.POSIXct
-require("shinythemes")
+require(shinythemes)
 require(DT)
 require(shinyWidgets)
-require("shinydashboard")
+require(shinydashboard)
 library(igraph) #make the network
 library(leaflet) #make the map
 library(sp) #make sp file, use spChFIDs(), SpatialLines, function
