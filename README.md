@@ -100,7 +100,7 @@ In another study, we were working on individual COVID-19 confirmed case report f
 
 # IV. Result - Tools
 
--   <p align="justify">Questionnaire: The questionnaire form can be accessed via the [KoboToolbox](https://ee.kobotoolbox.org/x/BfIvw6ed) link. For additional information about the data dictionary and how to use the questionnaire, please refer to the wiki page. The tutorial for extracting and loading data from KoboToolbox into R is available in the "Export data from KoboToolbox tutorial" folder.</p>
+-   <p align="justify">Questionnaire: The questionnaire form can be accessed via the <a href="https://ee.kobotoolbox.org/x/BfIvw6ed" title="Title"> KoboToolbox </a>link. The <a href="https://github.com/manhnguy/Contact-Tracing-for-Respiratory-Transmitted-Diseases/blob/main/questionnaire_built_form.xlsx" title="Title"> XLS built form </a> is also available to create your own project. For additional information about the data dictionary and how to use the questionnaire, please refer to the wiki page. The tutorial for extracting and loading data from KoboToolbox into R is available in the "Export data from KoboToolbox tutorial" folder.</p>
 
 -   <p align="justify">R Shiny application: The app is stored in the "Contact Network Visualization" folder. To run the app, start with prep.R, followed by ui.R, and finally run server.R. Open the app in a browser to observe the network on OpenStreetMap. The steps outlined in the app can be followed using the provided example data.</p>
 
