@@ -2,8 +2,7 @@
 
 server <- shinyServer(function(input, output, session) {
 
-    # Begin of server
-
+# Begin of server
 output$image <- renderImage({
     list(src =  "Timeline_diagram.jpeg",
          alt = "This is alternate text",  height = 400, width = 400
@@ -14,7 +13,7 @@ output$image <- renderImage({
 
   output$text2 <- renderText({ input$txt2 })
 
-  ##### Load the data. #####
+##### Load the data. #####
 
   mydat <- reactive({
     req(input$file1)
@@ -25,7 +24,7 @@ output$image <- renderImage({
     as.data.frame(dat_for_tab())
   })
 
-  ##### Inputs for subset ####
+##### Inputs for subset ####
 
   observe({  # The drop-down menu depends on data set.
     updateSelectizeInput(session, "nodecol",
@@ -81,46 +80,23 @@ output$image <- renderImage({
   show_testwindow <- reactive({ input$show_testwindow })
 
 
-  ##### Subset based on subset choices. #####
+##### Subset based on subset choices. #####
 
   # Subset of data (based on selection options on the left)
   dat_for_tab <- reactive({
-  # if(input$select_all == TRUE){
     mydat() %>%
-        mutate(row_nr = row_number()) %>% relocate(row_nr)# %>%#} #else {
-       #   return(mydat()
-              #   arrange(.[[input$sort_by]]) #%>%
-        #           filter(.[[colName()]] %in% categories()) %>%
-         #          filter(.[[colName2()]] <= input$range[2] &
-        #                    .[[colName2()]] >= input$range[1]) %>%
-        #           filter(date_report >= input$date_range[1]) %>%
-        #           filter(date_report <= input$date_range[2]) %>%
-
-           #        mutate(row_nr = row_number()) %>% relocate(row_nr)
-         # )
-
-          # .[[]] corrects for the fact that colName is a string.
-      #  }
-
-
+        mutate(row_nr = row_number()) %>% relocate(row_nr)
   })
 
-  ##### Create data table. #####
+##### Create data table. #####
   output$table <- renderDataTable({
-    as.data.frame( dat_for_tab() ) %>%
-      #  filter( (id %in% selected_nodes()) |(infector %in% selected_nodes() )  ) %>%
-
-      datatable(
-        options = list(scrollX = TRUE)) %>%
+    as.data.frame( dat_for_tab()) %>%
+      datatable(options = list(scrollX = TRUE)) %>% # Use datatable() to make sure dates are shown in correct format
       formatStyle(1:ncol(dat_for_tab()), lineHeight='60%')
-    # Use datatable() to make sure dates are shown in correct format
   })
 
 
   # Network plot
-#  dat_network <- reactive({
-#    prepare_network(dat_for_tab())
-#  })
   dat_network <- reactive({
     prepare_network_new(dat_for_tab(), input$case_var, input$infector_var)
   })
@@ -134,8 +110,6 @@ output$image <- renderImage({
                 Shiny.onInputChange('current_nodes_selection', data.nodes);
                 Shiny.onInputChange('current_edges_selection', data.edges);
                 ;}")
-
-
   })
 
   # Node selection to subset data
@@ -145,19 +119,14 @@ output$image <- renderImage({
 
   # Table selected nodes
   output$table_selected_nodes <- renderDataTable({
-    as.data.frame( dat_for_tab() ) %>%
-      filter( (Case_ID %in% selected_nodes()) |(infector %in% selected_nodes() )  ) %>%
-
-      datatable(
-        options = list(scrollX = TRUE)) %>%
+    as.data.frame( dat_for_tab()) %>%
+      filter((Case_ID %in% selected_nodes()) |(infector %in% selected_nodes())) %>%
+      datatable(options = list(scrollX = TRUE)) %>%
       formatStyle(1:ncol(dat_for_tab()), lineHeight='60%')
     # Use datatable() to make sure dates are shown in correct format
   })
 
-
-
-
-  ############### Timeline #########
+##### Timeline #####
   output$timeline <- renderPlotly({
 
     colors <- c("exposure window" = "blue", "symptom onset" = "orange",
@@ -166,7 +135,7 @@ output$image <- renderImage({
     shapes <- c(95, 43)
 
     mydat <- as.data.frame( dat_for_tab() ) %>%
-      filter( (.[[input$case_var]] %in% selected_nodes()) |(.[[input$infector_var]] %in% selected_nodes() )  ) %>%
+      filter( (.[[input$case_var]] %in% selected_nodes()) |(.[[input$infector_var]] %in% selected_nodes())) %>%
       mutate(case_var = .[[input$case_var]],
              start_of_exposure = .[[input$start_of_exposure]],
              end_of_exposure = .[[input$end_of_exposure]],
@@ -176,16 +145,8 @@ output$image <- renderImage({
              ) %>%
       mutate(new_row_nr = row_number(), xloc = min(start_of_exposure, na.rm = TRUE))
 
-    p <- ggplot(data = mydat
-    #
-    #   # Data selected nodes .[[colName()]]
-# %>%
-               # mutate(new_row_nr = 1:length(id)),
-
-  #    dat_selected_nodes() %>% as.data.frame() #%>%
-  #    mutate(new_row_nr = 1:nrow()),
-
-      ) + geom_rect(aes(y = new_row_nr, xmin=start_of_exposure,
+    p <- ggplot(data = mydat) + 
+      geom_rect(aes(y = new_row_nr, xmin=start_of_exposure,
                                          xmax=
                                          end_of_exposure,
                            ymin = new_row_nr-0.5, ymax=new_row_nr+0.5),
@@ -196,7 +157,7 @@ output$image <- renderImage({
                       ymin = new_row_nr-0.5, ymax=new_row_nr+0.5),
                   fill="purple", alpha=.25) +
 
-      # # Exposure
+       # Exposure
        geom_text(aes(x=start_of_exposure, y=new_row_nr,
                     color="exposure window"), size=4, label = "E0") +
        geom_text(aes(x=end_of_exposure, y=new_row_nr,
@@ -210,16 +171,13 @@ output$image <- renderImage({
 
       if(show_testwindow() == TRUE){
       p <- p +
-      # # Last negative test (P0)
+      # Last negative test (P0)
       geom_text(aes(x=last_negative, y=new_row_nr,
                     color="last neg. to first pos."), size=4, label = "P0") +
       # First positive test (P1)
       geom_text(aes(x=first_positive, y=new_row_nr,
                     color="last neg. to first pos."), size=4, label = "P1")
       }
-#        geom_text(aes(x=first_positive, y=new_row_nr, color="tested positive"),
-#                size=2,
-#                label = "L1")
 
       p <- p +
 
@@ -235,25 +193,11 @@ output$image <- renderImage({
       theme(axis.text.y = element_blank(),
             axis.ticks.y= element_blank(),
             axis.text.x=element_text(color="black"),
-            panel.grid.major = element_blank()#,
-        #    panel.grid = element_blank()#,
-                                                             #   panel.grid.minor = element_blank()
-            ) #panel.grid.major = element_line(colour = "darkgrey", linetype = 1))+
+            panel.grid.major = element_blank()
+            )
 
 
-    ggplotly(p, height = # https://www.r-bloggers.com/2017/06/get-the-best-from-ggplotly/
-               # https://plotly.com/ggplot2/
-
-      400
-      #          35*nrow(
-      #
-      # # Subset data based on selected nodes
-      # as.data.frame( dat_for_tab() ) %>%
-      #   filter( (id %in% selected_nodes()) |(infector %in% selected_nodes() )  )
-      #
-      #                           )
-
-      ) %>%
+    ggplotly(p, height = 400) %>% # https://www.r-bloggers.com/2017/06/get-the-best-from-ggplotly/ # https://plotly.com/ggplot2/
       layout(
         showlegend = T,
         legend = list(x = 0, y = 1.15, orientation = 'h'),
@@ -263,23 +207,18 @@ output$image <- renderImage({
         yaxis = list(
           color = "transparent"
         )
-
       )
-
     })
 
-  ###########################
-
-
-  ##### Data subsets and other files that should be updated in the app.
-  #   These are inputs for the tabel et cetera above.
-
+##### Map Network #####
+  # Data subsets and other files that should be updated in the app.
+  # These are inputs for the table et cetera above.
   # Data selected nodes
   dat_plot_nodes <- reactive({
 
       mydat()  %>%
-        filter( (id %in% selected_nodes())
-                |(infector %in% selected_nodes() )  ) %>%
+        filter((id %in% selected_nodes())
+                |(infector %in% selected_nodes())) %>%
         mutate(row_nr = row_number()) %>% relocate(row_nr)
 
       # .[[]] corrects for the fact that colName is a string
