@@ -61,7 +61,7 @@ The questionnaire is designed to facilitate contact tracing efforts in anticipat
 Step 2: Define the targeted respondents
 
 <p align="justify">
-The questionnaire would be used in the context of interviewing which means there will be interviewer and interviewee. The interviewer should be public health staff or anyone who has been trained and responsible for tracing the contacts. The interviewees can be confirmed cases and their contacts. The target of respondents is diverse to all over community with different background, age, gender....
+The questionnaire would be used in the context of interviewing which means there will be interviewer and interviewee. The interviewer should be public health staff or anyone who has been trained and responsible for tracing the contacts. The interviewees can be confirmed cases and their contacts, and can be of any background, age, gender, etc.
 </p>
 
 Step 3: Develop questions and choose question type
@@ -98,7 +98,7 @@ To streamline the process of transferring data from KoboToolbox to R, we used th
 Besides, we wanted to estimate the latency time distribution of the Delta variant based individual case reports from HCMC prepared between May and July 2021. Crucial information for determining the latency time is the exposure window. To assist in choosing the exposure window, we made a simple R Shiny application that visualizes the contact network based on entered data and the individual exposure information. After building the questionnaire, we enhanced the app to make it more user-friendly. This app will help Policy Makers in detecting when and where outbreaks are happening and how big they are, supporting them in making decisions to contain the outbreak.
 </p>
 
-# IV. Result - Tools
+# IV. Results
 
 -   <p align="justify">Questionnaire: The questionnaire form can be accessed via the <a href="https://ee.kobotoolbox.org/x/BfIvw6ed" title="Title"> KoboToolbox</a> link. The <a href="https://github.com/manhnguy/Contact-Tracing-for-Respiratory-Transmitted-Diseases/blob/main/questionnaire_built_form.xlsx" title="Title"> XLS built form</a> is also available to create your own project. For additional information about the data dictionary and how to use the questionnaire, please refer to the <a href="https://github.com/manhnguy/Contact-Tracing-for-Respiratory-Transmitted-Diseases/wiki" title="Title"> Wiki page</a>. The tutorial for extracting and loading data from KoboToolbox into R is available in the <a href="https://github.com/manhnguy/Contact-Tracing-for-Respiratory-Transmitted-Diseases/tree/main/Export%20data%20from%20KoboToolbox%20tutorial" title="Title"> Export data from KoboToolbox tutorial</a> folder.</p>
 
